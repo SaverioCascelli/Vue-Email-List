@@ -14,9 +14,12 @@
 <body>
     <div id="app" class="container">
         <div class="row">
-            <div class="col">
-                <p>{{msg}}</p>
+            <div v-show="isEmailRequestEnded" class="col-5">
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="email in emails">{{email}}</li>
+                </ul>
             </div>
+            <div class="col" v-show="!isEmailRequestEnded"><p>Loading...</p></div>
         </div>
     </div>
     <script src="js/sript.js"></script>
